@@ -49,7 +49,7 @@ const questions = [
 
 questions.forEach((item, idx) => {
   idx++;
-  const questionNumber = idx >= 10 ? idx : +("0" + idx);
+  const questionNumber = idx >= 10 ? idx : "0" + idx;
   const questionSectionItemClassName = `${questionSectionClassName}__item`;
   const elem = document.createElement("div");
 
@@ -62,7 +62,7 @@ questions.forEach((item, idx) => {
       <div>${questionNumber}</div>
     </div>
     <div class="${questionSectionItemClassName}-title">
-      ${item.question}
+      <span>${item.question}</span>
     </div>
     <div class="${questionSectionItemClassName}-chevron-container">
       <img

@@ -60,8 +60,11 @@
         @media (max-width: $xxlSize) {
           margin-right: 50px;
         }
-        @media (max-width: $xxlSize) {
+        @media (max-width: $lgSize) {
           margin-right: 41px;
+        }
+        @media (max-width: 450px) {
+          margin-right: 30px;
         }
       }
     }
