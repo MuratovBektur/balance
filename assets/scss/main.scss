@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
+@import "normalize.scss";
+@import "variables.scss";
+
+@import "section-first.scss";
+@import "section-second.scss";
+@import "section-third.scss";
+@import "section-fourth.scss";
+@import "section-question.scss";
+
+body {
+  padding-top: 20px;
+  font-family: "Raleway";
+  background: #faffec;
+  padding-bottom: 140px;
+  @media (max-width: $lgSize) {
+    padding-top: 15px;
+    padding-bottom: 52px;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-roboto {
+  font-family: "Roboto";
+}
+
+.section {
+  display: flex;
+  padding: 0 $sectionXPadding $sectionBottomPadding;
+  max-width: 1290px;
+  margin: auto;
+  @media (max-width: $lgSize) {
+    padding-bottom: 100px;
+    flex-direction: column-reverse;
+  }
+  & > * {
+    flex-shrink: 0;
+  }
+  &_no-reverse {
+    @media (max-width: $lgSize) {
+      flex-direction: column;
+    }
+  }
+
+  // чтобы изображение выходило
+  // за предела контейнера
+  &__img-container {
+    $marginLarge: -200px;
+    $marginMedium: calc($marginLarge / 2);
+    $marginSmall: calc($marginMedium / 2);
+
+    $breakpointLarge: 1700px;
+    $breakpointMeduim: calc($breakpointLarge - 200px);
+    $breakpointSmall: $xxlSize;
+
+    margin-left: $marginLarge;
+    @media (max-width: $breakpointLarge) {
+      margin-left: $marginMedium;
+    }
+    @media (max-width: $breakpointMeduim) {
+      margin-left: $marginSmall;
+    }
+    @media (max-width: $breakpointSmall) {
+      margin-left: 0;
+    }
+    &_reverse {
+      margin-right: $marginLarge;
+      @media (max-width: $breakpointLarge) {
+        margin-right: $marginMedium;
+      }
+      @media (max-width: $breakpointMeduim) {
+        margin-right: $marginSmall;
+      }
+      @media (max-width: $breakpointSmall) {
+        margin-right: 0;
+      }
+    }
+  }
+  &__title {
+    font-weight: 300;
+    font-size: 50px;
+    line-height: 59px;
+    @media (max-width: $xxlSize) {
+      font-size: 40px;
+      line-height: 47px;
+    }
+    @media (max-width: $lgSize) {
+      text-align: center;
+      font-size: 30px;
+      line-height: 35px;
+    }
+    &-img {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      top: 12px;
+      @media (max-width: $lgSize) {
+        top: 6px;
+      }
+      & > img {
+        width: 50px;
+        @media (max-width: $xxlSize) {
+          width: 40px;
+        }
+        @media (max-width: $lgSize) {
+          width: 30px;
+        }
+      }
+    }
+  }
+  &__subtitle {
+    font-size: 20px;
+    line-height: 130%;
+    color: #3e3e3e;
+    @media (max-width: $xxlSize) {
+      font-size: 18px;
+    }
+    @media (max-width: $lgSize) {
+      font-size: 16px;
+    }
+  }
+}
+
+.page-container {
+  max-width: 1920px;
+  margin: auto;
+}
+
+.card {
+  $defaultBoxShadow: 0px 3px 40px rgba(0, 0, 0, 0.07);
+  background: #ffffff;
+  box-shadow: $defaultBoxShadow;
+  border-radius: 15px;
+  &:hover {
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 3px 40px rgba(0, 0, 0, 0.15);
+  }
+  &_no-hover {
+    box-shadow: $defaultBoxShadow;
+  }
+}
+
+.gender-form {
+  max-width: 410px;
+  width: 100%;
+  $genderOptionColumnBreakpoint: 380px;
+
+  @media (max-width: $lgSize) {
+    margin: auto;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 35px;
+    margin: 0 0 30px;
+    @media (max-width: $xxlSize) {
+      font-size: 24px;
+      line-height: 28px;
+    }
+    @media (max-width: $lgSize) {
+      font-size: 18px;
+      line-height: 21px;
+    }
+  }
+  &__options {
+    display: flex;
+
+    justify-content: space-between;
+    @media (max-width: $lgSize) {
+      justify-content: space-around;
+    }
+    @media (max-width: $genderOptionColumnBreakpoint) {
+      flex-direction: column;
+      align-items: center;
+    }
+    &-item {
+      max-width: 190px;
+      width: calc(50% - 15px);
+      height: 54px;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #3e3e3e;
+      font-size: 20px;
+      line-height: 23px;
+      @media (max-width: $lgSize) {
+        max-width: 165px;
+        height: 50px;
+      }
+      @media (max-width: $genderOptionColumnBreakpoint) {
+        max-width: none;
+        width: 100%;
+      }
+      & > img {
+        margin-right: 10px;
+      }
+      &_female {
+        @media (max-width: $genderOptionColumnBreakpoint) {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+        &:hover {
+          color: #ff7ab2;
+          box-shadow: 0px 3px 40px rgba(255, 122, 178, 0.4);
+        }
+      }
+      &_male {
+        &:hover {
+          color: #6be7ff;
+          box-shadow: 0px 3px 40px rgba(107, 231, 255, 0.4);
+        }
+      }
+    }
+  }
+  &__send-btn {
+    background: #b9ff5e;
+
+    border: 2px solid #000000;
+    border-radius: 15px;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 29px;
+    margin-top: 50px;
+    width: 100%;
+    height: 70px;
+    @media (max-width: $lgSize) {
+      margin-top: 20px;
+      height: 60px;
+    }
+    @media (max-width: $genderOptionColumnBreakpoint) {
+      height: 50px;
+    }
+    &:hover {
+      transition: all 0.3s ease-in-out;
+      background: #91fd03;
+    }
+  }
+  &__warning-text {
+    margin-top: 15px;
+    font-size: 15px;
+    line-height: 130%;
+    color: #9b9b9b;
+    @media (max-width: $lgSize) {
+      margin-top: 20px;
+      font-size: 13px;
+    }
+  }
+}

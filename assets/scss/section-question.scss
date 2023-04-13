@@ -1,0 +1,104 @@
+@import "variables.scss";
+
+.question-section {
+  padding: 0 $sectionXPadding;
+  &__title {
+    font-weight: 300;
+    font-size: 50px;
+    line-height: 59px;
+    margin-bottom: 50px;
+    @media (max-width: $xxlSize) {
+      font-size: 40px;
+      line-height: 47px;
+      margin-bottom: 40px;
+    }
+    @media (max-width: $lgSize) {
+      font-size: 30px;
+      line-height: 35px;
+      margin-bottom: 30px;
+    }
+  }
+  &__item {
+    padding: 20px;
+    height: 100%;
+    // transition: height 0.3s ease-in-out;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    &-top-part {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      outline: none;
+      border: none;
+      background-color: transparent;
+    }
+
+    &-number {
+      background: #b9ff5e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      font-size: 30px;
+      line-height: 35px;
+      width: 60px;
+      height: 60px;
+      @media (max-width: $lgSize) {
+        font-size: 20px;
+        line-height: 23px;
+        width: 40px;
+        height: 40px;
+      }
+    }
+    &-title {
+      text-align: left;
+      flex-grow: 1;
+      margin-left: 30px;
+      font-size: 30px;
+      line-height: 35px;
+      @media (max-width: $lgSize) {
+        margin-left: 15px;
+        font-size: 18px;
+        line-height: 21px;
+      }
+    }
+    &-chevron {
+      transform: rotate(0);
+      transition: all 0.3s linear;
+      @media (max-width: $lgSize) {
+        width: 24px;
+      }
+      &_rotate {
+        transform: rotate(180deg);
+      }
+      &-container {
+        padding-right: 32px;
+        @media (max-width: $lgSize) {
+          padding-right: 0;
+        }
+      }
+    }
+    &-bottom-part {
+      font-family: Inter;
+
+      font-size: 20px;
+      line-height: 130%;
+      color: #3e3e3e;
+      height: 0;
+      overflow: hidden;
+
+      &_show {
+        margin-top: 20px;
+        padding: 20px 170px 8px 90px;
+        border-top: 1px solid #e2e2e2;
+        height: 100%;
+        @media (max-width: $lgSize) {
+          padding: 18px 0;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

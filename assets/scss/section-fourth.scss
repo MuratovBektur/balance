@@ -1,0 +1,52 @@
+@import "variables.scss";
+
+.fourth-section {
+  &__container {
+    padding-top: 47px;
+    background: linear-gradient(180deg, #e3ffbe 0%, #f8fb84 100%);
+    border-radius: 50px;
+    margin-bottom: $sectionBottomPadding;
+    & > section {
+      padding-bottom: 0;
+    }
+  }
+  &__left-part {
+    margin-right: 7%;
+    width: 53%;
+    align-self: end;
+    @media (max-width: $lgSize) {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+  &__img {
+    width: 100%;
+    max-width: 944px;
+    display: block;
+    @media (max-width: $lgSize) {
+      width: 70%;
+    }
+    &-container {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  &__right-part {
+    padding-right: 3%;
+    width: 40%;
+    padding-bottom: 60px;
+    @media (max-width: $lgSize) {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 50px;
+    @media (max-width: $xxlSize) {
+      margin-bottom: 40px;
+    }
+    @media (max-width: $lgSize) {
+      margin-bottom: 30px;
+    }
+  }
+}
