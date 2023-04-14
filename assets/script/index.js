@@ -78,6 +78,8 @@ questions.forEach((item, idx) => {
   `;
   questionSectionElement.appendChild(elem);
 
+  // чтобы развернуть или свернуть скрываемый текст - на клик ставим обработчик,
+  // который добавляет или удаляет класс, если оное есть
   elem.addEventListener("click", () => {
     const questionBodyClassName = `${questionSectionItemClassName}-bottom-part`;
     const questionChevronClassName = `${questionSectionItemClassName}-chevron`;
